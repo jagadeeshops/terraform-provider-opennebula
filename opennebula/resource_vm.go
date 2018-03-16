@@ -134,7 +134,7 @@ func resourceVmCreate(d *schema.ResourceData, meta interface{}) error {
 		d.Get("template_id"),
 		d.Get("name"),
 		false,
-		"",
+		"MEMORY=4096\nCPU=4\nVCPU=4",
 		false,
 	)
 	if err != nil {
