@@ -149,7 +149,8 @@ func resourceVmCreate(d *schema.ResourceData, meta interface{}) error {
 		d.Get("template_id"),
 		d.Get("name"),
 		false,
-		"MEMORY=" + d.Get("memory").(string) + "\nCPU=" + d.Get("cpu").(string)  + "\nVCPU=" + d.Get("vcpu").(string),
+		// "MEMORY=" + d.Get("memory").(string) + "\nCPU=" + d.Get("cpu").(string)  + "\nVCPU=" + d.Get("vcpu").(string),
+		fmt.Sprintf("MEMORY=%v\nCPU=%v\nVCPU=%v", d.Get("memory"), d.Get("cpu"),d.Get("vcpu")), 
 		false,
 	)
 	if err != nil {
